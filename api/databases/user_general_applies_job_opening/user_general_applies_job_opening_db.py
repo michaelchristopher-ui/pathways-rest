@@ -41,19 +41,6 @@ class UserGeneralAppliesJobOpeningDB(DBManager):
             list_of_db_objects.append(db_object)
         return list_of_db_objects
 
-    def get_all_data_from_database(self):
-        database_query = """SELECT * FROM user_general_applies_job_opening; """
-        cursor = self.query_database(database_query)
-        from .user_general_applies_job_opening_models import UserGeneralAppliesJobOpeningModel
-        list_of_db_objects = []
-        for db_row in cursor.fetchall():
-            db_object = UserGeneralAppliesJobOpeningModel()
-            db_object.username = db_row[0]
-            db_object.job_id = db_row[1]
-            db_object.done_challenges = db_row[2]
-            list_of_db_objects.append(db_object)
-        return list_of_db_objects
-
     def get_data_from_database_by_id(self, id_to_find, id_to_find2):
         database_query = """SELECT * FROM user_general_applies_job_opening WHERE username = '{0}' AND job_id = '{1}'; """.format(
             id_to_find, id_to_find2)

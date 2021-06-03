@@ -10,6 +10,8 @@ from .db_views.job_opening_has_suggested_courses_views import job_opening_has_su
 from .db_views.user_general_views import user_general_insert, user_general_list, user_general_detail
 from .db_views.user_general_applies_job_opening_views import user_general_applies_job_opening_insert, user_general_applies_job_opening_list, user_general_applies_job_opening_detail
 from .db_views.experience_views import experience_insert, experience_list, experience_detail
+from .db_views.user_general_does_challenges_views import user_general_does_challenges_insert, user_general_does_challenges_list, user_general_does_challenges_detail
+
 
 urlpatterns = [
 
@@ -166,8 +168,26 @@ urlpatterns = [
 
     #id1 = order_no, id2 = username
     path('experience/get_or_delete/<str:id>/<str:id2>/', experience_detail,
-         name="experience_detail")
+         name="experience_detail"),
 
+
+
+    # user_general_does_challenges
+    # For this one you can GET (open this subdomain in the browser) to find out the JSON needed to store data in database
+    # To insert data, use the INSERT method and send the JSON in the correct format
+    path('user_general_does_challenges/insert/', user_general_does_challenges_insert,
+         name="user_general_does_challenges_insert"),
+
+    # The method is only GET for this one
+    path('user_general_does_challenges/list', user_general_does_challenges_list,
+         name="user_general_does_challenges_list"),
+
+    # If the method is GET, then data with primary key id will be retrieved
+    # If the method is DELETE, then data with primary key id will be deleted
+
+    #id1 = username, job_opening_id, order_number
+    path('user_general_does_challenges/get_or_delete/<str:id>/<str:id2>/<str:id3>/', user_general_does_challenges_detail,
+         name="user_general_does_challenges_detail")
 
 
 ]

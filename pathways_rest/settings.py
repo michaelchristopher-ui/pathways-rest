@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-@il0ph&+(v$w6$-t--h8niy8(#+da)66@)m4)l^jkt4^++2%-z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [*]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -83,12 +83,13 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'pathways_database',
         'USER': 'postgres',
-        'PASSWORD': 'AS)asdfDfA(S*UDd',
-        'HOST': '34.134.67.178',
+        'PASSWORD': 'postgres',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
 
+# 'AS)asdfDfA(S*UDd'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
