@@ -19,7 +19,7 @@ class UserGeneralDoesChallengesDB(DBManager):
         return
 
     def update_data_to_database(self, db_models):
-        database_query = """UPDATE user_general_does_challenges
+        database_query = """UPDATE user_general_does_challenges SET
         username = '{0}',
         job_opening_id = '{1}', order_number = '{2}', data_related = '{3}' WHERE username = '{0}' AND job_opening_id = '{1}' AND order_number = '{2}';""".format(
             db_models.username,
