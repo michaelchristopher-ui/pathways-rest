@@ -1,3 +1,4 @@
+
 from django.urls import path
 
 from .db_views.job_opening_views import job_opening_insert, job_opening_list, job_opening_detail
@@ -11,7 +12,7 @@ from .db_views.user_general_views import user_general_insert, user_general_list,
 from .db_views.user_general_applies_job_opening_views import user_general_applies_job_opening_insert, user_general_applies_job_opening_list, user_general_applies_job_opening_detail
 from .db_views.experience_views import experience_insert, experience_list, experience_detail
 from .db_views.user_general_does_challenges_views import user_general_does_challenges_insert, user_general_does_challenges_list, user_general_does_challenges_detail
-
+from .db_views.custom_query_views import custom_query_list_detail
 
 urlpatterns = [
 
@@ -55,7 +56,7 @@ urlpatterns = [
 
     # If the method is GET, then data with primary key id will be retrieved
     # If the method is DELETE, then data with primary key id will be deleted
-    #id1 = job_opening_id, id2 = order_number
+    # id1 = job_opening_id, id2 = order_number
     path('challenges/get_or_delete/<str:id>/<str:id2>/',
          challenges_detail, name="challenges_detail"),
 
@@ -148,7 +149,7 @@ urlpatterns = [
 
     # If the method is GET, then data with primary key id will be retrieved
     # If the method is DELETE, then data with primary key id will be deleted
-    #id1 = username, id2 = job_id
+    # id1 = username, id2 = job_id
     path('user_general_applies_job_opening/get_or_delete/<str:id>/<str:id2>/', user_general_applies_job_opening_detail,
          name="user_general_applies_job_opening_detail"),
 
@@ -166,7 +167,7 @@ urlpatterns = [
     # If the method is GET, then data with primary key id will be retrieved
     # If the method is DELETE, then data with primary key id will be deleted
 
-    #id1 = order_no, id2 = username
+    # id1 = order_no, id2 = username
     path('experience/get_or_delete/<str:id>/<str:id2>/', experience_detail,
          name="experience_detail"),
 
@@ -185,9 +186,14 @@ urlpatterns = [
     # If the method is GET, then data with primary key id will be retrieved
     # If the method is DELETE, then data with primary key id will be deleted
 
-    #id1 = username, job_opening_id, order_number
+    # id1 = username, job_opening_id, order_number
     path('user_general_does_challenges/get_or_delete/<str:id>/<str:id2>/<str:id3>/', user_general_does_challenges_detail,
-         name="user_general_does_challenges_detail")
+         name="user_general_does_challenges_detail"),
+
+
+    #
+    path('custom_query/list_by_username/<str:id>',
+         custom_query_list_detail, name="custom_query_list_detail")
 
 
 ]

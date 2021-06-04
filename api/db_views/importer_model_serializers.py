@@ -10,6 +10,7 @@ from ..databases.job_opening_has_suggested_courses.job_opening_has_suggested_cou
 from ..databases.user_general_applies_job_opening.user_general_applies_job_opening_models import UserGeneralAppliesJobOpeningModel
 from ..databases.experience.experience_models import ExperienceModel
 from ..databases.user_general_does_challenges.user_general_does_challenges_models import UserGeneralDoesChallengesModel
+from ..databases.custom_query.custom_query_models import CustomQueryModel
 
 # Importer untuk serializer
 from ..databases.job_opening.job_opening_serializers import JobOpeningSerializers
@@ -23,3 +24,4 @@ from ..databases.job_opening_has_suggested_courses.job_opening_has_suggested_cou
 from ..databases.user_general_applies_job_opening.user_general_applies_job_opening_serializers import UserGeneralAppliesJobOpeningSerializers
 from ..databases.experience.experience_serializers import ExperienceSerializers
 from ..databases.user_general_does_challenges.user_general_does_challenges_serializers import UserGeneralDoesChallengesSerializers
+from ..databases.custom_query.custom_query_serializers import CustomQuerySerializers

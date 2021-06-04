@@ -83,8 +83,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'pathways_database',
         'USER': 'postgres',
-        'PASSWORD': 'AS)asdfDfA(S*UDd',
-        'HOST': '34.134.67.178',
+        'HOST': '127.0.0.1', 'PASSWORD': 'postgres',
+        # 'HOST': '34.134.67.178','PASSWORD': 'AS)asdfDfA(S*UDd',
         'PORT': '5432',
     }
 }
